@@ -1,0 +1,20 @@
+<p *ngFor="let producto of listaProductos">
+  {{ producto.numero }}
+  {{ producto.concepto }}
+  {{ producto.importe }}
+  <input type="button" value="borrar" (click)="borrar(producto)" />
+</p>
+<form>
+  <p>
+    Numero:<input type="text" name="numero" [(ngModel)]="nuevoProducto.numero" />
+  </p>
+  <p>
+    Concepto:<input type="text" name="concepto" [(ngModel)]="nuevoProducto.concepto" />
+  </p>
+  <p>
+    Importe:<input type="text" name="importe" [(ngModel)]="nuevoProducto.importe" />
+  </p>
+  <p>
+      <input type="button" value="insertar" (click)="insertar()"/>
+  </p>
+</form>
