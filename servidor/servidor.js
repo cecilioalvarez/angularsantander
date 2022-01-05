@@ -11,22 +11,21 @@ facturas.push(f1,f2);
 app.get('/facturas', (req, res) => {
   res.send(facturas)
 })
+//añademe al api rest un metodo de delete 
 app.delete("/facturas/:numero",function(req,res) {
 
-    let seleccionado=0;
+    let seleccionado=-1;
     for (let i=0;i<facturas.length;i++) {
 
-      if (factura.numero==req.params.numero) {
+      if (facturas[i].numero==req.params.numero) {
 
           seleccionado=i;
       }
     
     }
+    if(seleccionado!=-1)
     facturas.splice(seleccionado,1);
-    res.status(204).send()
-
-
-
+    res.status(204).send();
 
 });
 

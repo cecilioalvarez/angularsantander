@@ -10,7 +10,7 @@ import { FacturaRESTService } from '../factura-rest.service';
 export class C6Component implements OnInit {
 
   listaFacturas:Factura[]=[];
-  constructor(servicio:FacturaRESTService) {
+  constructor(private servicio:FacturaRESTService) {
 
       servicio.BuscarTodos().subscribe((datos)=> {
 
@@ -20,6 +20,13 @@ export class C6Component implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+  borrar(numero:number) {
+    //la peticion ajax termina
+    this.servicio.Borrar(numero).subscribe(function(datos){
+
+        console.log("hemos borrado");
+    })
   }
 
 }
