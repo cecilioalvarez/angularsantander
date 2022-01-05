@@ -20,4 +20,10 @@ export class FacturaRESTService {
     return this.http.delete<Factura>(`http://localhost:3000/facturas/${numero}`);
 
   }
+
+  public Detalle(numero:number):Observable<Factura> {
+    
+    return this.http.get<Factura>(`http://localhost:3000/facturas/${numero}`);
+
+  }
 }

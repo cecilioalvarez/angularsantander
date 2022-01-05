@@ -33,4 +33,13 @@ export class C6Component implements OnInit {
     })
   }
 
+  detalle(numero:number) {
+
+    this.servicio.Detalle(numero).subscribe((datos)=> {
+
+        console.log(datos);
+    })
+  
+  }
+
 }
