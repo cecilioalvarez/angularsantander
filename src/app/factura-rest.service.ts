@@ -11,7 +11,7 @@ export class FacturaRESTService {
 
   public BuscarTodos():Observable<Factura[]> {
     
-    return this.http.get<Factura[]>("https://localhost:5001/api/facturas");
+    return this.http.get<Factura[]>("http://localhost:3000/facturas");
 
   }
 }
