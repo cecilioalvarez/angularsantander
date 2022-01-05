@@ -23,9 +23,13 @@ export class C6Component implements OnInit {
   }
   borrar(numero:number) {
     //la peticion ajax termina
-    this.servicio.Borrar(numero).subscribe(function(datos){
+    this.servicio.Borrar(numero).subscribe((datos)=>{
+        //no existe para este ambito
+        //una borrados los datos la lista se vuelve a cargar con las modificaciones
+        this.servicio.BuscarTodos().subscribe((otrosdatos)=> {
 
-        console.log("hemos borrado");
+              this.listaFacturas=otrosdatos;
+        })
     })
   }
 
