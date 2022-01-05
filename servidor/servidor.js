@@ -29,6 +29,22 @@ app.delete("/facturas/:numero",function(req,res) {
 
 });
 
+app.get("/facturas/:numero",function(req,res) {
+
+  let factura={};
+  for (let i=0;i<facturas.length;i++) {
+
+    if (facturas[i].numero==req.params.numero) {
+
+        factura=facturas[i];
+    }
+  
+  }
+  res.send(factura);
+
+});
+
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
