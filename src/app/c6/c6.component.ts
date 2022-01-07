@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Factura } from '../factura';
 import { FacturaRESTService } from '../factura-rest.service';
+import { Producto } from '../producto';
 
 @Component({
   selector: 'app-c6',
@@ -10,6 +11,10 @@ import { FacturaRESTService } from '../factura-rest.service';
 export class C6Component implements OnInit {
 
   listaFacturas:Factura[]=[];
+  fdetalle:Factura={} as Factura;
+  vistaActiva:string="lista";
+  nuevoProducto={} as Producto;
+
   constructor(private servicio:FacturaRESTService) {
 
       servicio.BuscarTodos().subscribe((datos)=> {
@@ -37,9 +42,19 @@ export class C6Component implements OnInit {
 
     this.servicio.Detalle(numero).subscribe((datos)=> {
 
-        console.log(datos);
+       this.fdetalle=datos as Factura
+       this.vistaActiva='detalle';
     })
   
+  }
+  volver () {
+
+    this.vistaActiva='lista';
+  }
+
+  nuevo() {
+
+    this.vistaActiva='formulario';
   }
 
 }

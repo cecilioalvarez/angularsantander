@@ -1,3 +1,4 @@
+<div *ngIf="vistaActiva=='lista'">
 <p *ngFor="let factura of listaFacturas">
     {{ factura.numero }}
     {{ factura.concepto }}
@@ -5,3 +6,28 @@
     <input type="button" name="borrar" value="borrar" (click)="borrar(factura.numero)"/>
     <input type="button" name="detalle" value="detalle" (click)="detalle(factura.numero)"/>
   </p>
+  <input type="button" value="nuevo" (click)="nuevo()"/>
+</div>
+  <div *ngIf="vistaActiva=='detalle'">
+    <p>{{fdetalle.numero}}</p>
+    <p>{{fdetalle.concepto}}</p> 
+    <p>{{fdetalle.importe}}</p>
+    <input type="button" value="volver" (click)="volver()"/>
+  </div>
+
+  <div *ngIf="vistaActiva=='formulario'">
+    <form>
+      <p>
+      Numero:<input type="text" name="numero" [(ngModel)]="nuevoProducto.numero"/>
+      </p>
+      <p>
+        Concepto:<input type="text" name="numero" [(ngModel)]="nuevoProducto.concepto"/>
+        </p>
+        <p>
+         Importe: <input type="text" name="numero" [(ngModel)]="nuevoProducto.importe"/>
+        </p>
+        <p>
+          <input type="button" name="boton" value="insertar"/>
+        </p>
+    </form>
+  </div>
