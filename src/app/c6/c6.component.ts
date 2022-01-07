@@ -62,7 +62,7 @@ export class C6Component implements OnInit {
     this.servicio.Insertar(this.nuevaFactura).subscribe(()=> {
 
           this.vistaActiva='lista';
-
+          //observable
           this.servicio.BuscarTodos().subscribe((otrosdatos)=> {
 
             this.listaFacturas=otrosdatos;
