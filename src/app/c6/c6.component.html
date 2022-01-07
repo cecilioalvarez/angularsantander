@@ -18,16 +18,16 @@
   <div *ngIf="vistaActiva=='formulario'">
     <form>
       <p>
-      Numero:<input type="text" name="numero" [(ngModel)]="nuevoProducto.numero"/>
+      Numero:<input type="text" name="numero" [(ngModel)]="nuevaFactura.numero"/>
       </p>
       <p>
-        Concepto:<input type="text" name="numero" [(ngModel)]="nuevoProducto.concepto"/>
+        Concepto:<input type="text" name="numero" [(ngModel)]="nuevaFactura.concepto"/>
         </p>
         <p>
-         Importe: <input type="text" name="numero" [(ngModel)]="nuevoProducto.importe"/>
+         Importe: <input type="text" name="numero" [(ngModel)]="nuevaFactura.importe"/>
         </p>
         <p>
-          <input type="button" name="boton" value="insertar"/>
+          <input type="button" name="boton" value="insertar" (click)="insertar()"/>
         </p>
     </form>
   </div>

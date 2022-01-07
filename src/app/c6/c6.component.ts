@@ -13,7 +13,7 @@ export class C6Component implements OnInit {
   listaFacturas:Factura[]=[];
   fdetalle:Factura={} as Factura;
   vistaActiva:string="lista";
-  nuevoProducto={} as Producto;
+  nuevaFactura={} as Factura;
 
   constructor(private servicio:FacturaRESTService) {
 
@@ -55,6 +55,19 @@ export class C6Component implements OnInit {
   nuevo() {
 
     this.vistaActiva='formulario';
+  }
+
+  insertar() {
+
+    this.servicio.Insertar(this.nuevaFactura).subscribe(()=> {
+
+          this.vistaActiva='lista';
+
+          this.servicio.BuscarTodos().subscribe((otrosdatos)=> {
+
+            this.listaFacturas=otrosdatos;
+      })
+    })
   }
 
 }

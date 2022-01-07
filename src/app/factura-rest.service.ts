@@ -26,4 +26,10 @@ export class FacturaRESTService {
     return this.http.get<Factura>(`http://localhost:3000/facturas/${numero}`);
 
   }
+
+  public Insertar(factura:Factura):Observable<Factura> {
+    
+    return this.http.post<Factura>("http://localhost:3000/facturas/",factura);
+
+  }
 }
