@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Factura } from '../factura';
 import { FacturaRESTService } from '../factura-rest.service';
 
@@ -10,7 +11,7 @@ import { FacturaRESTService } from '../factura-rest.service';
 export class ListaFacturasComponent implements OnInit {
 
   listaFacturas:Factura[]=[];
-  constructor(private servicio:FacturaRESTService) {
+  constructor(private servicio:FacturaRESTService,private router:Router) {
 
 
     servicio.BuscarTodos().subscribe((datos)=> {
@@ -36,16 +37,11 @@ export class ListaFacturasComponent implements OnInit {
   }
 
   detalle(numero:number) {
-
     this.servicio.Detalle(numero).subscribe((datos)=> {
-
-     
     })
   
   }
-
   nuevo() {
-
-   //this.vistaActiva='formulario';
+    this.router.navigate(["formularionuevo"]);
   }
 }
