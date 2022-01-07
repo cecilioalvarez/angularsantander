@@ -39,12 +39,14 @@ export class C6Component implements OnInit {
   }
 
   detalle(numero:number) {
-
+    /*
     this.servicio.Detalle(numero).subscribe((datos)=> {
 
        this.fdetalle=datos as Factura
        this.vistaActiva='detalle';
     })
+
+    */
   
   }
   volver () {

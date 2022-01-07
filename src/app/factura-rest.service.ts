@@ -21,7 +21,7 @@ export class FacturaRESTService {
 
   }
 
-  public Detalle(numero:number):Observable<Factura> {
+  public BuscarUno(numero:number):Observable<Factura> {
     
     return this.http.get<Factura>(`http://localhost:3000/facturas/${numero}`);
 

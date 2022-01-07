@@ -12,6 +12,7 @@ import { C5Component } from './c5/c5.component';
 import { C6Component } from './c6/c6.component';
 import { ListaFacturasComponent } from './lista-facturas/lista-facturas.component';
 import { FormularioNuevoComponent } from './formulario-nuevo/formulario-nuevo.component';
+import { DetalleComponent } from './detalle/detalle.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormularioNuevoComponent } from './formulario-nuevo/formulario-nuevo.co
     C5Component,
     C6Component,
     ListaFacturasComponent,
-    FormularioNuevoComponent
+    FormularioNuevoComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,

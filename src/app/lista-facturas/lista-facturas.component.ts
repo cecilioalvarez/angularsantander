@@ -37,8 +37,9 @@ export class ListaFacturasComponent implements OnInit {
   }
 
   detalle(numero:number) {
-    this.servicio.Detalle(numero).subscribe((datos)=> {
-    })
+
+    this.router.navigate(["detalle",numero]);
+   
   
   }
   nuevo() {
